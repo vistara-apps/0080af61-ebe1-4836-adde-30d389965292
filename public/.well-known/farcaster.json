@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "TradeZen",
+    "subtitle": "Built with Zara",
+    "description": "TradeZen is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://0080af61ebe14836adde30d389965292-dfyc.vercel.app",
+    "splashImageUrl": "https://0080af61ebe14836adde30d389965292-dfyc.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://0080af61ebe14836adde30d389965292-dfyc.vercel.app/image.png",
+    "tagline": "TradeZen",
+    "screenshotUrls": [
+      "https://0080af61ebe14836adde30d389965292-dfyc.vercel.app/screenshot.png",
+      "https://0080af61ebe14836adde30d389965292-dfyc.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://0080af61ebe14836adde30d389965292-dfyc.vercel.app/api/webhook"
+  }
+}
