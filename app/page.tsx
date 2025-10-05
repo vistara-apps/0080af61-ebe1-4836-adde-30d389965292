@@ -5,10 +5,11 @@ import { DashboardView } from '@/components/DashboardView';
 import { FloatingWidget } from '@/components/FloatingWidget';
 import { OnboardingFlow } from '@/components/OnboardingFlow';
 import { Navigation } from '@/components/Navigation';
+import { PaymentDemo } from '@/components/PaymentDemo';
 
 export default function Home() {
   const [showOnboarding, setShowOnboarding] = useState(true);
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'trades' | 'settings'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'trades' | 'settings' | 'payments'>('dashboard');
 
   if (showOnboarding) {
     return <OnboardingFlow onComplete={() => setShowOnboarding(false)} />;
@@ -30,6 +31,7 @@ export default function Home() {
             <p className="text-text-muted">Configure your trading preferences</p>
           </div>
         )}
+        {activeTab === 'payments' && <PaymentDemo />}
       </div>
 
       <FloatingWidget />

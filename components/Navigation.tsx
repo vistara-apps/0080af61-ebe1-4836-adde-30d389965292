@@ -1,16 +1,17 @@
 'use client';
 
-import { LayoutDashboard, List, Settings2 } from 'lucide-react';
+import { LayoutDashboard, List, Settings2, CreditCard } from 'lucide-react';
 
 interface NavigationProps {
-  activeTab: 'dashboard' | 'trades' | 'settings';
-  onTabChange: (tab: 'dashboard' | 'trades' | 'settings') => void;
+  activeTab: 'dashboard' | 'trades' | 'settings' | 'payments';
+  onTabChange: (tab: 'dashboard' | 'trades' | 'settings' | 'payments') => void;
 }
 
 export function Navigation({ activeTab, onTabChange }: NavigationProps) {
   const tabs = [
     { id: 'dashboard' as const, label: 'Dashboard', icon: LayoutDashboard },
     { id: 'trades' as const, label: 'Trades', icon: List },
+    { id: 'payments' as const, label: 'Payments', icon: CreditCard },
     { id: 'settings' as const, label: 'Settings', icon: Settings2 },
   ];
 
