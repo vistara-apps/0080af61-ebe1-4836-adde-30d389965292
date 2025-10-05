@@ -4,18 +4,40 @@ import { OnchainKitProvider } from '@coinbase/onchainkit';
 import { base } from 'wagmi/chains';
 import { type ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { WagmiProvider, createConfig, http } from 'wagmi';
+import { coinbaseWallet, metaMask, walletConnect } from 'wagmi/connectors';
 
 const queryClient = new QueryClient();
 
+// Wagmi configuration for x402 payments
+const wagmiConfig = createConfig({
+  chains: [base],
+  connectors: [
+    coinbaseWallet({
+      appName: 'TradeZen',
+      appLogoUrl: '/favicon.ico',
+    }),
+    metaMask(),
+    walletConnect({
+      projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'demo-project-id',
+    }),
+  ],
+  transports: {
+    [base.id]: http(),
+  },
+});
+
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <OnchainKitProvider 
-      apiKey={process.env.NEXT_PUBLIC_ONCHAINKIT_API_KEY || 'cdp_demo_key'} 
-      chain={base}
-    >
+    <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        {children}
+        <OnchainKitProvider 
+          apiKey={process.env.NEXT_PUBLIC_ONCHAINKIT_API_KEY || 'cdp_demo_key'} 
+          chain={base}
+        >
+          {children}
+        </OnchainKitProvider>
       </QueryClientProvider>
-    </OnchainKitProvider>
+    </WagmiProvider>
   );
 }
