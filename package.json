@@ -6,30 +6,41 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@coinbase/onchainkit": "^0.38.19",
     "@supabase/supabase-js": "^2.39.0",
     "@tanstack/react-query": "^5.17.19",
+    "autoprefixer": "^10.4.16",
+    "axios": "^1.12.2",
+    "lucide-react": "^0.462.0",
     "next": "^15.3.3",
     "openai": "^4.24.1",
+    "pino-pretty": "^10.3.1",
+    "postcss": "^8.4.33",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.1",
     "viem": "^2.27.2",
     "wagmi": "^2.14.11",
-    "lucide-react": "^0.462.0",
-    "tailwindcss": "^3.4.1",
-    "postcss": "^8.4.33",
-    "autoprefixer": "^10.4.16",
-    "pino-pretty": "^10.3.1"
+    "x402-axios": "^0.6.6"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^14.3.1",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20.10.6",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "^5.3.3",
     "eslint": "^8.56.0",
-    "eslint-config-next": "15.3.3"
+    "eslint-config-next": "15.3.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.4.4",
+    "typescript": "^5.3.3"
   }
 }
